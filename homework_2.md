@@ -25,7 +25,7 @@ skimmed through it in the lesson and said we'd cover it in the homework -
 so here we are.
 
 We prepare the environment the same way as in the module's
-[ONNX Runtime](../../../02-vector-search/lessons/09-onnx-embedder.md)
+[ONNX Runtime](lessons/09-onnx-embedder.md)
 lesson.
 
 Create a fresh project and install the dependencies:
@@ -40,9 +40,9 @@ uv add --dev huggingface-hub jupyter
 We also need two helper scripts from the `embed/` directory of the course
 repo:
 
-- [`download.py`](https://github.com/DataTalksClub/llm-zoomcamp/blob/main/02-vector-search/embed/download.py)
+- [`download.py`](embed/download.py)
 (fetches an ONNX model from HuggingFace) and
-- [`embedder.py`](https://github.com/DataTalksClub/llm-zoomcamp/blob/main/02-vector-search/embed/embedder.py) (the `Embedder` class with an `encode` interface)
+- [`embedder.py`](embed/embedder.py) (the `Embedder` class with an `encode` interface)
 
 Let's download them:
 
@@ -56,7 +56,7 @@ By default `download.py` fetches `Xenova/all-MiniLM-L6-v2`, the ONNX
 version of the `all-MiniLM-L6-v2` model from the lessons:
 
 ```bash
-uv run python download.py
+uv run python embed/download.py
 ```
 
 Now we're ready to do the homework.
@@ -71,7 +71,7 @@ The embedder returns a vector of 384 numbers. What's the first value
 (`v[0]`)?
 
 * -0.31
-* -0.02
+* X -0.02
 * 0.12
 * 0.44
 
@@ -108,7 +108,7 @@ its `content`, and compute the cosine similarity with the query vector
 from Q1. What do you get?
 
 * 0.07
-* 0.37
+* X 0.37
 * 0.68
 * 0.92
 
@@ -134,7 +134,7 @@ Which file does the highest-scoring chunk belong to (its `filename`)?
 
 * `02-vector-search/lessons/03-embeddings-dataset.md`
 * `02-vector-search/lessons/06-rag-vector.md`
-* `02-vector-search/lessons/07-sqlitesearch-vector.md`
+* X `02-vector-search/lessons/07-sqlitesearch-vector.md`
 * `02-vector-search/lessons/09-onnx-embedder.md`
 
 ## Q4. Vector search with minsearch
@@ -150,7 +150,7 @@ query:
 Which file is the `filename` of the first result?
 
 * `02-vector-search/lessons/04-vector-search.md`
-* `04-evaluation/lessons/05-search-metrics.md`
+* X `04-evaluation/lessons/05-search-metrics.md`
 * `04-evaluation/lessons/13-llm-as-judge.md`
 * `05-monitoring/lessons/04-metrics.md`
 
@@ -171,7 +171,7 @@ vector results but not in the text results?
 
 * `02-vector-search/lessons/01-intro.md`
 * `02-vector-search/lessons/02-embeddings.md`
-* `02-vector-search/lessons/08-pgvector.md`
+* X `02-vector-search/lessons/08-pgvector.md`
 * `03-orchestration/lessons/05-rag.md`
 
 ## Q6. Hybrid search
@@ -241,7 +241,7 @@ results = rrf([vector_results, text_results])
 Which file is ranked first after RRF?
 
 * `01-agentic-rag/lessons/01-intro.md`
-* `01-agentic-rag/lessons/13-function-calling.md`
+* X `01-agentic-rag/lessons/13-function-calling.md`
 * `01-agentic-rag/lessons/14-agentic-loop.md`
 * `01-agentic-rag/lessons/16-other-frameworks.md`
 
